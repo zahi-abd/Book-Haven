@@ -7,21 +7,21 @@ function Home() {
       title: "The Silent Library",
       author: "John Carter",
       date: "12/12/2026",
-      image: "/BookCovers/The Silent Library.png",
+      image: `${process.env.PUBLIC_URL}/BookCovers/The Silent Library.png`,
     },
     {
       id: 2,
       title: "Beyond the Stars",
       author: "Emma Wilson",
       date: "16/1/2027",
-      image: "/BookCovers/Beyond The Stars.png",
+      image: `${process.env.PUBLIC_URL}/BookCovers/Beyond The Stars.png`,
     },
     {
       id: 3,
       title: "The Last Kingdom",
       author: "David Miller",
       date: "21/1/2027",
-      image: "/BookCovers/The Last Kingdom.png",
+      image: `${process.env.PUBLIC_URL}/BookCovers/The Last Kingdom.png`,
     },
   ];
 
