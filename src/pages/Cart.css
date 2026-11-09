@@ -1,0 +1,208 @@
+/* ============================================================
+   BookHaven — Cart Page
+   pages/Cart.css
+   ============================================================ */
+
+.cart-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+}
+
+/* ---- Heading ---- */
+.cart-page > h1 {
+  font-size: var(--font-size-2xl);
+  color: var(--color-text);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-border);
+  position: relative;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.cart-page > h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-accent);
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+}
+
+/* ---- Empty cart ---- */
+.cart-empty {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+  padding: var(--space-2xl) 0;
+  font-style: italic;
+  transition: color var(--transition);
+}
+
+/* ---- Cart Item ---- */
+.cart-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), background-color var(--transition), border-color var(--transition);
+}
+
+.cart-item:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.cart-item > img {
+  width: 100px;
+  height: 140px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---- Cart Item Details ---- */
+.cart-item__details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.cart-item__details h3 {
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+  transition: color var(--transition);
+}
+
+.cart-item__price {
+  font-size: var(--font-size-base);
+  color: var(--color-primary);
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.cart-item__quantity {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  transition: color var(--transition);
+}
+
+.cart-item__subtotal {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-text);
+  transition: color var(--transition);
+}
+
+/* ---- Cart Item Buttons ---- */
+.cart-item__buttons {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-top: var(--space-sm);
+}
+
+.cart-item__buttons .btn {
+  min-width: 36px;
+  padding: var(--space-xs) var(--space-md);
+}
+
+/* ---- Total ---- */
+.cart-total {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  text-align: right;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 2px solid var(--color-border);
+  transition: color var(--transition), border-color var(--transition);
+}
+
+/* ============================================================
+   Dark Theme — Cart Page
+   ============================================================ */
+
+.dark-theme .cart-page > h1 {
+  color: #F2F1E9;
+  border-bottom-color: #3B473E;
+}
+
+.dark-theme .cart-page > h1::after {
+  background-color: #C49A50;
+}
+
+.dark-theme .cart-empty {
+  color: #B8C0B7;
+}
+
+.dark-theme .cart-item {
+  background-color: #222A25;
+  border-color: #3B473E;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.dark-theme .cart-item:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme .cart-item > img {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.dark-theme .cart-item__details h3 {
+  color: #F2F1E9;
+}
+
+.dark-theme .cart-item__price {
+  color: #C49A50;
+}
+
+.dark-theme .cart-item__quantity {
+  color: #B8C0B7;
+}
+
+.dark-theme .cart-item__subtotal {
+  color: #F2F1E9;
+}
+
+.dark-theme .cart-total {
+  color: #C49A50;
+  border-top-color: #3B473E;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+  .cart-page {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .cart-item {
+    grid-template-columns: 80px 1fr;
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+
+  .cart-item > img {
+    width: 80px;
+    height: 110px;
+  }
+
+  .cart-item__details h3 {
+    font-size: var(--font-size-base);
+  }
+
+  .cart-total {
+    font-size: var(--font-size-lg);
+    text-align: center;
+  }
+}

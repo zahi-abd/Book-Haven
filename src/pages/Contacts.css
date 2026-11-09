@@ -1,0 +1,142 @@
+/* ============================================================
+   BookHaven — Contacts Page
+   pages/Contacts.css
+   ============================================================ */
+
+.contacts-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+.contacts-page > h1 {
+  font-size: var(--font-size-2xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-border);
+  position: relative;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.contacts-page > h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-accent);
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+}
+
+/* ---- Intro paragraph ---- */
+.contacts-intro {
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+  line-height: 1.8;
+  margin-bottom: var(--space-xl);
+  transition: color var(--transition);
+}
+
+/* ---- Contact detail rows ---- */
+.contacts-detail {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-md);
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), background-color var(--transition),
+              border-color var(--transition), color var(--transition);
+}
+
+.contacts-detail:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.contacts-detail strong {
+  color: var(--color-text);
+  min-width: 72px;
+  flex-shrink: 0;
+  font-weight: 700;
+  transition: color var(--transition);
+}
+
+.contacts-detail a {
+  color: var(--color-primary);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.contacts-detail a:hover,
+.contacts-detail a:focus {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* ============================================================
+   Dark Theme — Contacts Page
+   ============================================================ */
+
+.dark-theme .contacts-page > h1 {
+  color: #F2F1E9;
+  border-bottom-color: #3B473E;
+}
+
+.dark-theme .contacts-page > h1::after {
+  background-color: #C49A50;
+}
+
+.dark-theme .contacts-intro {
+  color: #F2F1E9;
+}
+
+.dark-theme .contacts-detail {
+  background-color: #222A25;
+  border-color: #3B473E;
+  border-left-color: #78927B;
+  color: #B8C0B7;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.dark-theme .contacts-detail:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme .contacts-detail strong {
+  color: #F2F1E9;
+}
+
+.dark-theme .contacts-detail a {
+  color: #78927B;
+}
+
+.dark-theme .contacts-detail a:hover,
+.dark-theme .contacts-detail a:focus {
+  color: #C49A50;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .contacts-page {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .contacts-page > h1 {
+    font-size: var(--font-size-xl);
+  }
+
+  .contacts-detail {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+    padding: var(--space-md);
+  }
+}

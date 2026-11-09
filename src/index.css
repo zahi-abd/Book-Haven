@@ -1,0 +1,263 @@
+/* ============================================================
+   BookHaven — Global Styles & CSS Variables
+   index.css  (imported in index.js — applies site-wide)
+   ============================================================ */
+
+@import './App.css';
+
+/* ---- Design Tokens ---- */
+:root {
+  /* Brand Colors */
+  --color-primary:          #234B3A;   /* Forest Green */
+  --color-secondary:        #78927B;   /* Sage Green */
+  --color-accent:           #C49A50;   /* Muted Gold */
+
+  /* Surfaces */
+  --color-bg:               #F8F5ED;   /* Warm Cream — main page background */
+  --color-surface:          #FFFFFF;   /* White — cards, panels */
+  --color-surface-elevated: #FFFFFF;
+
+  /* Text */
+  --color-text:             #292D2A;   /* Dark Charcoal */
+  --color-text-muted:       #747A74;   /* Muted Gray */
+
+  /* Borders */
+  --color-border:           #E6E0D3;   /* Soft Beige */
+
+  /* Derived hover tones */
+  --color-primary-dark:     #1a3829;
+  --color-primary-light:    #2f6050;
+  --color-accent-light:     #d4aa68;
+
+  /* Spacing scale */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  40px;
+  --space-2xl: 64px;
+
+  /* Typography */
+  --font-serif: Georgia, 'Times New Roman', Times, serif;
+  --font-sans:  -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+                'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+
+  --font-size-sm:   0.875rem;  /* 14px */
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-md:   1.125rem;  /* 18px */
+  --font-size-lg:   1.375rem;  /* 22px */
+  --font-size-xl:   1.75rem;   /* 28px */
+  --font-size-2xl:  2.25rem;   /* 36px */
+
+  /* Borders & radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Shadows — green-tinted for warmth */
+  --shadow-sm: 0 1px 4px  rgba(35, 75, 58, 0.08);
+  --shadow-md: 0 4px 14px rgba(35, 75, 58, 0.13);
+  --shadow-lg: 0 8px 28px rgba(35, 75, 58, 0.18);
+
+  /* Transitions */
+  --transition: 0.18s ease;
+
+  /* Layout */
+  --max-width:    1200px;
+  --navbar-height: 64px;
+}
+
+/* ---- Dark Theme Design Tokens ---- */
+.dark-theme,
+.app.dark-theme,
+:root.dark-theme,
+html.dark-theme,
+body.dark-theme,
+:root:has(.dark-theme),
+body:has(.dark-theme) {
+  /* Surfaces */
+  --color-bg:               #171C19;   /* Main background */
+  --color-surface:          #222A25;   /* Secondary background / cards */
+  --color-surface-elevated: #2B352E;   /* Elevated surfaces */
+
+  /* Text */
+  --color-text:             #F2F1E9;   /* Primary text */
+  --color-text-muted:       #B8C0B7;   /* Secondary text */
+
+  /* Brand / Accents */
+  --color-primary:          #78927B;   /* Accent green */
+  --color-secondary:        #78927B;   /* Accent green */
+  --color-accent:           #C49A50;   /* Accent gold */
+
+  /* Borders */
+  --color-border:           #3B473E;   /* Borders */
+
+  /* Derived hover tones */
+  --color-primary-dark:     #8da690;
+  --color-primary-light:    #68806b;
+  --color-accent-light:     #d4aa68;
+
+  /* Shadows for dark mode */
+  --shadow-sm: 0 1px 4px  rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 28px rgba(0, 0, 0, 0.65);
+}
+
+/* ---- Explicit Light Theme Tokens ---- */
+.light-theme,
+.app.light-theme,
+:root.light-theme,
+html.light-theme,
+body.light-theme {
+  --color-primary:          #234B3A;   /* Forest Green */
+  --color-secondary:        #78927B;   /* Sage Green */
+  --color-accent:           #C49A50;   /* Muted Gold */
+  --color-bg:               #F8F5ED;   /* Warm Cream */
+  --color-surface:          #FFFFFF;   /* White */
+  --color-surface-elevated: #FFFFFF;
+  --color-text:             #292D2A;   /* Dark Charcoal */
+  --color-text-muted:       #747A74;   /* Muted Gray */
+  --color-border:           #E6E0D3;   /* Soft Beige */
+  --color-primary-dark:     #1a3829;
+  --color-primary-light:    #2f6050;
+  --color-accent-light:     #d4aa68;
+  --shadow-sm: 0 1px 4px  rgba(35, 75, 58, 0.08);
+  --shadow-md: 0 4px 14px rgba(35, 75, 58, 0.13);
+  --shadow-lg: 0 8px 28px rgba(35, 75, 58, 0.18);
+}
+
+/* ---- Reset ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  /* Prevent horizontal overflow on mobile */
+  overflow-x: hidden;
+}
+
+/* ---- App Shell (sticky footer pattern) ---- */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Router wrapper */
+#root > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Page content (all divs between navbar & footer) grow to push footer down */
+#root > div > div:not(.navbar):not(.footer) {
+  flex: 1;
+}
+
+/* ---- Typography Defaults ---- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--color-text);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+h1 { font-size: var(--font-size-2xl); }
+h2 { font-size: var(--font-size-xl);  }
+h3 { font-size: var(--font-size-lg);  }
+h4 { font-size: var(--font-size-md);  }
+
+p {
+  line-height: 1.7;
+}
+
+/* ---- Links ---- */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-accent);
+}
+
+/* ---- Images ---- */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---- Lists ---- */
+ul {
+  list-style: none;
+}
+
+/* ---- Code ---- */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* ---- Focus ring (accessibility) ---- */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   Dark Theme — Global Rules & Component Overrides
+   ============================================================ */
+
+body.dark-theme,
+body:has(.dark-theme) {
+  background-color: #171C19;
+  color: #F2F1E9;
+}
+
+.dark-theme,
+.app.dark-theme {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme h5,
+.dark-theme h6 {
+  color: var(--color-text);
+}
+
+.dark-theme a {
+  color: var(--color-secondary);
+}
+
+.dark-theme a:hover,
+.dark-theme a:focus {
+  color: var(--color-accent);
+}
+
+.dark-theme :focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}

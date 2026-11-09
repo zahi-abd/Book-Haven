@@ -1,0 +1,23 @@
+/* ============================================================
+   BookHaven — App.css
+   Applies to the main application container (.app)
+   ============================================================ */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.app.light-theme {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.app.dark-theme {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}

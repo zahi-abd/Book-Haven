@@ -1,0 +1,261 @@
+/* ============================================================
+   BookHaven — Book Card
+   components/BookCard.css
+   ============================================================ */
+
+.book-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  transition: box-shadow var(--transition), transform var(--transition),
+              background-color var(--transition), border-color var(--transition);
+}
+
+.book-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+/* Cover image */
+.book-card > img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  object-position: top center;
+  border-bottom: 1px solid var(--color-border);
+  transition: border-color var(--transition);
+}
+
+/* Title */
+.book-card > h3 {
+  font-size: var(--font-size-base);
+  font-family: var(--font-serif);
+  color: var(--color-text);
+  padding: var(--space-md) var(--space-md) var(--space-xs);
+  line-height: 1.35;
+  transition: color var(--transition);
+}
+
+.book-card__author {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  padding: 0 var(--space-md);
+  transition: color var(--transition);
+}
+
+.book-card__price {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: var(--color-primary);
+  padding: var(--space-xs) var(--space-md) 0;
+  transition: color var(--transition);
+}
+
+.book-card__category {
+  display: inline-block;
+  background-color: rgba(120, 146, 123, 0.14);
+  color: var(--color-secondary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 3px var(--space-sm);
+  border-radius: 100px;
+  margin: var(--space-xs) var(--space-md);
+  width: fit-content;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+/* Button group */
+.book-card__actions {
+  display: flex;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  margin-top: auto;
+}
+
+/* ============================================================
+   BookHaven — Shared Button Styles
+   (Used across BookCard, Books page, Cart page)
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-md);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition),
+              border-color var(--transition), box-shadow var(--transition);
+  text-decoration: none;
+  line-height: 1;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Primary — Forest Green fill */
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  border: 1.5px solid var(--color-primary);
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+/* Outline — Forest Green border */
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+}
+
+.btn--outline:hover,
+.btn--outline:focus {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+/* Secondary — Sage Green */
+.btn--secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-surface);
+  border: 1.5px solid var(--color-secondary);
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus {
+  background-color: #5e7360;
+  border-color: #5e7360;
+}
+
+/* Danger — Red for Remove */
+.btn--danger {
+  background-color: transparent;
+  color: #b93333;
+  border: 1.5px solid #b93333;
+}
+
+.btn--danger:hover,
+.btn--danger:focus {
+  background-color: #b93333;
+  color: var(--color-surface);
+}
+
+/* Full-width helper */
+.btn--block {
+  width: 100%;
+}
+
+/* Make card action buttons share space equally */
+.book-card__actions .btn {
+  flex: 1;
+}
+
+/* ============================================================
+   Dark Theme — Book Card & Buttons
+   ============================================================ */
+
+.dark-theme .book-card {
+  background-color: #222A25;
+  border-color: #3B473E;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.dark-theme .book-card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme .book-card > img {
+  border-bottom-color: #3B473E;
+}
+
+.dark-theme .book-card > h3 {
+  color: #F2F1E9;
+}
+
+.dark-theme .book-card__author {
+  color: #B8C0B7;
+}
+
+.dark-theme .book-card__price {
+  color: #C49A50;
+}
+
+.dark-theme .book-card__category {
+  background-color: rgba(120, 146, 123, 0.18);
+  color: #78927B;
+  border: 1px solid rgba(120, 146, 123, 0.3);
+}
+
+/* Primary Button — Dark Theme */
+.dark-theme .btn--primary {
+  background-color: #78927B;
+  color: #171C19;
+  border-color: #78927B;
+}
+
+.dark-theme .btn--primary:hover,
+.dark-theme .btn--primary:focus {
+  background-color: #8da690;
+  border-color: #8da690;
+  color: #171C19;
+}
+
+/* Outline Button — Dark Theme */
+.dark-theme .btn--outline {
+  background-color: transparent;
+  color: #78927B;
+  border-color: #78927B;
+}
+
+.dark-theme .btn--outline:hover,
+.dark-theme .btn--outline:focus {
+  background-color: #78927B;
+  color: #171C19;
+  border-color: #78927B;
+}
+
+/* Secondary Button — Dark Theme */
+.dark-theme .btn--secondary {
+  background-color: #2B352E;
+  color: #F2F1E9;
+  border-color: #3B473E;
+}
+
+.dark-theme .btn--secondary:hover,
+.dark-theme .btn--secondary:focus {
+  background-color: #3B473E;
+  border-color: #78927B;
+  color: #F2F1E9;
+}
+
+/* Danger Button — Dark Theme */
+.dark-theme .btn--danger {
+  background-color: transparent;
+  color: #e05555;
+  border-color: #e05555;
+}
+
+.dark-theme .btn--danger:hover,
+.dark-theme .btn--danger:focus {
+  background-color: #e05555;
+  color: #171C19;
+  border-color: #e05555;
+}

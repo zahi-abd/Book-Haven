@@ -1,0 +1,67 @@
+/* ============================================================
+   BookHaven — About Page
+   pages/About.css
+   ============================================================ */
+
+.about-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+.about-page > h1 {
+  font-size: var(--font-size-2xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-border);
+  position: relative;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.about-page > h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-accent);
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+}
+
+.about-page > p {
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+  line-height: 1.85;
+  margin-bottom: var(--space-lg);
+  transition: color var(--transition);
+}
+
+/* ============================================================
+   Dark Theme — About Page
+   ============================================================ */
+
+.dark-theme .about-page > h1 {
+  color: #F2F1E9;
+  border-bottom-color: #3B473E;
+}
+
+.dark-theme .about-page > h1::after {
+  background-color: #C49A50;
+}
+
+.dark-theme .about-page > p {
+  color: #F2F1E9;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .about-page {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .about-page > h1 {
+    font-size: var(--font-size-xl);
+  }
+}
