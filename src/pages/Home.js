@@ -6,21 +6,21 @@ function Home() {
       id: 1,
       title: "The Silent Library",
       author: "John Carter",
-      date: "12/12/2026",
+      price: 12.99,
       image: `${process.env.PUBLIC_URL}/BookCovers/The Silent Library.png`,
     },
     {
       id: 2,
       title: "Beyond the Stars",
       author: "Emma Wilson",
-      date: "16/1/2027",
+      price: 9.99,
       image: `${process.env.PUBLIC_URL}/BookCovers/Beyond The Stars.png`,
     },
     {
       id: 3,
       title: "The Last Kingdom",
       author: "David Miller",
-      date: "21/1/2027",
+      price: 13.99,
       image: `${process.env.PUBLIC_URL}/BookCovers/The Last Kingdom.png`,
     },
   ];
@@ -32,7 +32,7 @@ function Home() {
         <p>Discover your next favorite book with us!</p>
       </div>
 
-      <h2 className="home-section-title">Coming Soon</h2>
+      <h2 className="home-section-title">Our Featured Books</h2>
 
       <div className="home-books-grid">
         {featuredBooks.map((book) => (
@@ -41,7 +41,7 @@ function Home() {
             <div className="home-book-card__info">
               <h3>{book.title}</h3>
               <p className="home-book-card__author">{book.author}</p>
-              <p className="home-book-card__price">{book.date}</p>
+              <p className="home-book-card__price">{book.price}</p>
             </div>
           </div>
         ))}

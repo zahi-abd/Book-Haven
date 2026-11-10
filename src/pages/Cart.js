@@ -14,12 +14,16 @@ function Cart(props) {
         props.cart.map((book) => (
           <div className="cart-item" key={book.id}>
             <img src={book.image} alt={book.title} />
+
             <div className="cart-item__details">
               <h3>{book.title}</h3>
+
               <p className="cart-item__price">Price: ${book.price}</p>
               <p className="cart-item__quantity">Quantity: {book.quantity}</p>
               <p className="cart-item__subtotal">Subtotal: ${book.price * book.quantity}</p>
+              
               <div className="cart-item__buttons">
+                
                 <button className="btn btn--danger" onClick={() => props.removeFromCart(book.id)}>
                   Remove
                 </button>
@@ -28,6 +32,7 @@ function Cart(props) {
                 </button>
                 <button className="btn btn--secondary" onClick={() => props.updateQuantity(book.id, -1)}>
                   −
+                
                 </button>
               </div>
             </div>

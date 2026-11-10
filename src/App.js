@@ -16,11 +16,14 @@ import Contact from "./pages/Contacts";
 import Cart from "./pages/Cart";
 
 function App() {
+
+  //Save cart in local storage
   const [cart, setCart] = useState(() => {
     const savedCart = localStorage.getItem("cart");
 
-    return savedCart ? JSON.parse(savedCart) : [];
+    return savedCart ? JSON.parse(savedCart) : []; // this is for turning the JSON into a js value
   });
+
   function addToCart(book) {
     setCart((previousCart) => {
       const existingBook = previousCart.find((item) => item.id === book.id);
@@ -34,11 +37,13 @@ function App() {
       }
     });
   }
+
   function removeFromCart(bookId) {
     setCart((previousCart) =>
       previousCart.filter((item) => item.id !== bookId),
     );
   }
+
   function updateQuantity(bookId, change) {
     setCart((previousCart) =>
       previousCart
@@ -50,6 +55,7 @@ function App() {
         .filter((item) => item.quantity > 0),
     );
   }
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
